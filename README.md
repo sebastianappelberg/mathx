@@ -8,7 +8,7 @@ for more information.
 ## Installation
 
 ```
-go get github.com/sebastianappelberg/mathx
+go get -u github.com/sebastianappelberg/mathx
 ```
 
 ## License
