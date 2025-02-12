@@ -2,7 +2,7 @@ package mathx
 
 // Min uses the min built-in function which returns the smallest value of a fixed number of
 // arguments of [cmp.Ordered] types. There must be at least one argument.
-// If T is a floating-point type and any of the arguments are NaNs,
+// If N is a floating-point type and any of the arguments are NaNs,
 // min will return NaN.
 func Min[N Number](x, y N) N {
 	return min(x, y)
@@ -10,7 +10,7 @@ func Min[N Number](x, y N) N {
 
 // Max uses the max built-in function which returns the largest value of a fixed number of
 // arguments of [cmp.Ordered] types. There must be at least one argument.
-// If T is a floating-point type and any of the arguments are NaNs,
+// If N is a floating-point type and any of the arguments are NaNs,
 // max will return NaN.
 func Max[N Number](x, y N) N {
 	return max(x, y)
@@ -20,7 +20,8 @@ func Max[N Number](x, y N) N {
 //
 // Special cases are:
 //
-//	Dim(math.MaxInt64, math.MinInt64) = 0
+//	Dim(MaxInteger, -x) = 0.
+//	Dim(MinInteger, x) = MinInteger + 1 - x.
 //	Dim(+Inf, +Inf) = NaN
 //	Dim(-Inf, -Inf) = NaN
 //	Dim(x, NaN) = Dim(NaN, x) = NaN
